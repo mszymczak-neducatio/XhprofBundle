@@ -29,7 +29,8 @@ To install the bundle, place it in the `src/Jns/Bundle` directory of your projec
 (so that it lives at `src/Jns/Bundle/XhprofBundle`). You can do this by adding
 the bundle as a submodule, cloning it, or simply downloading the source.
 
-    git submodule add https://github.com/jonaswouters/XhprofBundle.git src/Jns/Bundle/XhprofBundle
+    git submodule add https://github.com/mszymczak-neducatio/XhprofBundle.git src/Jns/Bundle/XhprofBundle
+    // originally: git submodule add https://github.com/jonaswouters/XhprofBundle.git src/Jns/Bundle/XhprofBundle
 
 ### Add the Jns namespace to your autoloader
 
