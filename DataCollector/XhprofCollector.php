@@ -124,7 +124,7 @@ class XhprofCollector extends DataCollector
         $em = $this->doctrine->getEntityManager($this->container->getParameter('jns_xhprof.entity_manager'));
 
         $connection = $em->getConnection();
-        $sql = 'INSERT INTO xhprof (`id`, `url`, `c_url`, `timestamp`, `server name`, `perfdata`, `type`, `cookie`, `post`, `get`, `pmu`, `wt`, `cpu`, `server_id`, `aggregateCalls_include`) 
+        $sql = 'INSERT INTO details (`id`, `url`, `c_url`, `timestamp`, `server name`, `perfdata`, `type`, `cookie`, `post`, `get`, `pmu`, `wt`, `cpu`, `server_id`, `aggregateCalls_include`)
                      VALUES (:run_id, :url, :canonical_url, null, :server_name, :perfdata, 0, :cookie, :post, :get, :pmu, :wt, :cpu, :server_id, \'\');';
 
         $this->runId = uniqid();
@@ -143,7 +143,7 @@ class XhprofCollector extends DataCollector
         $preparedStatement->bindValue(':wt', $wt);
         $preparedStatement->bindValue(':cpu', $cpu);
         $preparedStatement->bindValue(':server_id', getenv('SERV_NAME'));
-        //$preparedStatement->execute();
+        $preparedStatement->execute();
     }
 
     /**
